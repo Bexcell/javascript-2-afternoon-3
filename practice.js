@@ -29,7 +29,7 @@
 
 // Code Here 
 function first(arr, callback){
-  callback(arr[0]); 
+   callback(arr[0]);
 }
 
 // Do not edit the code below.
@@ -51,8 +51,8 @@ first(names, function(firstName){
 */
 
 //Code Here
-function last(arr, cb){
-  cb(arr[arr.length-1]);
+function last(arr,callback){
+  callback(arr[arr.length-1]);
 }
 
 
@@ -73,10 +73,11 @@ last(names, function(lastName){
 */
 
 //Code Here
-function multiply(num1, num2, cb){
-  cb(num1 * num2);
-
+function multiply(num1, num2, callback){
+callback(num1 * num2);
 }
+
+
 
 // Do not edit the code below.
 multiply(4, 3, function(answer){
@@ -96,15 +97,24 @@ multiply(4, 3, function(answer){
 */
 
 //Code Here 
-function contains(arr,str,cb){
-  for(let i=0; i < arr.length; i++){
-    if(arr.includes(str)){
-      cb(true);
-    } else{
-      cb(false);
-    }
+
+// Write a function called contains that takes in three parameters: an array, a name and a callback.  
+  function contains(arr, name, callback){
+     
   }
-}
+// Check if the name exists in the array. 
+    for(let i =0; i < array.length; i++){
+      //   If it does, invoke the callback with true as the argument. 
+    }if (arr.includes(str)){
+      callback(true);
+    }
+//   If the name does not exist, invoke the callback with false as the argument.
+
+       
+  
+
+
+
 
 // Do not edit the code below.
 contains(names, 'Colt', function(result){
@@ -126,16 +136,10 @@ contains(names, 'Colt', function(result){
 */
 
 //Code Here
-function uniq(names,callback){
-  for( let i = 0; i < names.length; i++){
-    for (let k = i +1; k < names.length; k++){
-      if(names[i]=== names[k]){
-        names.splice(k, 1)
-      }
-    }
-  }
-  callback(names);
-}
+function uniq(arr, callback)
+
+
+
 
 // Do not edit the code below.
 uniq(names, function(uniqArr){
@@ -153,11 +157,10 @@ uniq(names, function(uniqArr){
 */
 
 //Code Here 
-function each ( arr,cb){
-  for (let i = 0; i < arr.length; i ++){
-    cb(arr[i], i);
-  }
+function each(array, callback){
+  array.forEach(item => callback(item, array.indexOf(item)));
 }
+
 
 // Do not edit the code below.
 each(names, function(item, indice){
@@ -175,13 +178,15 @@ each(names, function(item, indice){
 */
 
 // Code here
-function getUserById(arr, id, cb){
-  for(let i = 0; i < arr.length; i++){
-    if(id === arr[i].id){
-      return cb(arr[i]);
+
+function getUserById(array, id, callback){
+  for(var i=0; i< array.length; i++){
+    if(array[i].id === id){
+      return callback(array[i]);
     }
   }
 }
+
 // Do not edit the code below.
 var users = [
   {
